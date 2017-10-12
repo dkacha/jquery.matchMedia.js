@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>matchMedia</title>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../dist/jquery.matchMedia.polyfill.js"></script>
+<script>
+$(document).ready(function () {
+    var breakpoint = $.mq.getBreakpoint();
+
+    $.mq.action(breakpoint.xs, function () {
+        $('.js-test1').text('xs');
+    }, function () {
+        console.log('xs out');
+    });
+
+    $.mq.action(breakpoint.sm, function () {
+        $('.js-test1').text('sm');
+    }, function () {
+        console.log('sm out');
+    });
+
+    $.mq.action(breakpoint.md, function () {
+        $('.js-test1').text('md');
+    }, function () {
+        console.log('md out');
+    });
+
+    $.mq.action(breakpoint.lg, function () {
+        $('.js-test1').text('lg');
+    }, function () {
+        console.log('lg out');
+    });
+
+    $('.js-test2').mq(breakpoint.xs, function () {
+        $(this).css('color', 'green').text('xs true');
+    }, function () {
+        $(this).css('color', 'red').text('xs false');
+    });
+});
+</script>
+<style>
+    html:before {
+      display: none;
+      content: '{"xs" : "(max-width: 47.9375em)", "sm": "(min-width: 48em) and (max-width: 61.9375em)", "md": "(min-width: 62em) and (max-width: 74.9375em)", "lg": "(min-width: 75em)"}';
+    }
+    body {
+        text-align: center;
+        margin-top: 50px;
+        font-family: sans-serif;
+    }
+</style>
+</head>
+
+<body>
+    <h1 class="js-test1"></h1>
+    <h1 class="js-test2"></h1>
+</body>
+
+</html>
