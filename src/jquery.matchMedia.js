@@ -2,24 +2,24 @@
     "use strict";
 
     $.mq = {
-        action: function (rule, actionIsTrue, actionIsFalse, elThis) {
-            if (typeof actionIsTrue == 'function' || typeof actionIsFalse == 'function') {
+        action: function (rule, handlerTrue, handlerFalse, elThis) {
+            if (typeof handlerTrue == 'function' || typeof handlerFalse == 'function') {
                 var mq = window.matchMedia(rule);
 
                 var callTrigger = function () {
                     var matches = mq.matches;
 
-                    if (!matches && typeof actionIsFalse == 'function') {
+                    if (!matches && typeof handlerFalse == 'function') {
                         if (elThis) {
-                            actionIsFalse.call(elThis);
+                            handlerFalse.call(elThis);
                         } else {
-                            actionIsFalse();
+                            handlerFalse();
                         }
-                    } else if (matches && typeof actionIsTrue == 'function') {
+                    } else if (matches && typeof handlerTrue == 'function') {
                         if (elThis) {
-                            actionIsTrue.call(elThis);
+                            handlerTrue.call(elThis);
                         } else {
-                            actionIsTrue();
+                            handlerTrue();
                         }
                     }
                 };
@@ -36,9 +36,9 @@
         }
     };
 
-    $.fn.mq = function (rule, actionIsTrue, actionIsFalse) {
+    $.fn.mq = function (rule, handlerTrue, handlerFalse) {
         return this.each(function () {
-            $.mq.action(rule, actionIsTrue, actionIsFalse, this);
+            $.mq.action(rule, handlerTrue, handlerFalse, this);
         });
     }
 })(jQuery);
