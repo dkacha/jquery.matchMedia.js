@@ -54,7 +54,7 @@ In css you must write json:
     }
 ```
 
-In js you cant call $.mq.getBreakpoint() and it will to return object width rules.
+In js you cant call $.mq.getBreakpoint() and it will to return object with rules.
 
 ```js
 var breakpoint = $.mq.getBreakpoint();
