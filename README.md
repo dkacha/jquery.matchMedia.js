@@ -1,13 +1,12 @@
 # jquery.matchMedia.js
-jQuery api adapter for matchMedia (https://developer.mozilla.org/cs/docs/Web/API/Window/matchMedia)
+jQuery adapter for matchMedia (https://developer.mozilla.org/cs/docs/Web/API/Window/matchMedia)
 
 Current browser support: https://caniuse.com/#search=matchMedia
-
 For matchMedia there is a polyfill (https://github.com/paulirish/matchMedia.js/)
 
 jquery.matchMedia.js has two versions
-1. dist/jquery.matchMedia.js - without polyfill
-2. dist/jquery.matchMedia.polyfill.js - with polyfill
+1. dist/jquery.matchMedia.js
+2. dist/jquery.matchMedia.polyfill.js - include polyfill (https://github.com/paulirish/matchMedia.js/)
 
 ## options
 * Rule - **string** - media queries rule. Example: '**(**max-width: 40em**)**'
