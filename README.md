@@ -2,7 +2,6 @@
 jQuery adapter for matchMedia (https://developer.mozilla.org/cs/docs/Web/API/Window/matchMedia)
 
 Current browser support: https://caniuse.com/#search=matchMedia
-For matchMedia there is a polyfill (https://github.com/paulirish/matchMedia.js/)
 
 jquery.matchMedia.js has two versions
 1. dist/jquery.matchMedia.js
