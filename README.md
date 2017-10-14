@@ -8,9 +8,9 @@ jquery.matchMedia.js has two versions
 2. dist/jquery.matchMedia.polyfill.js - include polyfill (https://github.com/paulirish/matchMedia.js/)
 
 ## options
-* Rule - **string** - media queries rule. Example: '**(**max-width: 40em**)**'
-* HandlerTrue - **function** function is calling, if rule is true
-* HandlerFalse - **function** function is calling, if rule is false
+* Rule - **string** - media queries rule. Example: '**(**max-width: 40em**)**'.
+* HandlerTrue - **function** - function is calling, if rule is true.
+* HandlerFalse - **function** - function is calling, if rule is false.
 
 You can call function in two ways
 
@@ -54,7 +54,7 @@ In css you must write json:
     }
 ```
 
-In js you must write:
+In js you cant call $.mq.getBreakpoint() and it will to return object width rules.
 
 ```js
 var breakpoint = $.mq.getBreakpoint();
@@ -75,3 +75,5 @@ And now it works
         console.log('sm false');
     });
 ```
+
+For inspiration, thank you: Jan Semilský and <a href="https://github.com/Jahoda">Bohumil Jahoda</a>.
