@@ -76,4 +76,4 @@ And now it works
     });
 ```
 
-For inspiration, thank you: Jan Semilský and <a href="https://github.com/Jahoda">Bohumil Jahoda</a>.
+For inspiration I thank Jan Semilský and <a href="https://github.com/Jahoda">Bohumil Jahoda</a>.
