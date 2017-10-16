@@ -124,10 +124,20 @@ window.matchMedia || (window.matchMedia = function() {
 (function ($) {
     "use strict";
 
+    var breakpoint = {};
+
+    var getBreakpoint = function (input) {
+        if (breakpoint[input] !== undefined) {
+            return breakpoint[input];
+        } else {
+            return input;
+        }
+    };
+
     $.mq = {
         action: function (rule, handlerTrue, handlerFalse, elThis) {
             if (typeof handlerTrue == 'function' || typeof handlerFalse == 'function') {
-                var mq = window.matchMedia(rule);
+                var mq = window.matchMedia(getBreakpoint(rule));
 
                 var callTrigger = function () {
                     var matches = mq.matches;
@@ -151,11 +161,8 @@ window.matchMedia || (window.matchMedia = function() {
                 callTrigger();
             }
         },
-        getBreakpoint: function () {
-            var before = window.getComputedStyle(document.documentElement, ':before');
-            var content = before.getPropertyValue('content');
-            content = content.substring(1, content.length - 1).replace(/\\/g, '');
-            return JSON.parse(content);
+        getBreakpoints: function () {
+            return breakpoint;
         }
     };
 
@@ -164,4 +171,11 @@ window.matchMedia || (window.matchMedia = function() {
             $.mq.action(rule, handlerTrue, handlerFalse, this);
         });
     }
+
+    $(document).ready(function () {
+        var before = window.getComputedStyle(document.documentElement, ':before');
+        var content = before.getPropertyValue('content');
+        content = content.substring(1, content.length - 1).replace(/\\/g, '');
+        breakpoint = JSON.parse(content);
+    });
 })(jQuery);

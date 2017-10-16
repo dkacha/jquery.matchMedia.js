@@ -8,7 +8,7 @@ jquery.matchMedia.js has two versions
 2. dist/jquery.matchMedia.polyfill.js - include polyfill (https://github.com/paulirish/matchMedia.js/)
 
 ## options
-* Rule - **string** - media queries rule. Example: '**(**max-width: 40em**)**'.
+* Rule - **string** - media queries rule or <a href="#cssBreakpoints">key</a>. Example: '**(**max-width: 40em**)**' or 'md'.
 * HandlerTrue - **function** - function is calling, if rule is true.
 * HandlerFalse - **function** - function is calling, if rule is false.
 
@@ -43,9 +43,9 @@ Example
 ```
 
 
-### You can share media query rules with css
+### <span id="cssBreakpoints">You can share media query rules with css</span>
 
-In css you must write json:
+In css you must write json width breakpoints to html:before {content '-->>HERE<<--'}:
 
 ```css
     html:before {
@@ -54,25 +54,22 @@ In css you must write json:
     }
 ```
 
-In js you cant call $.mq.getBreakpoint() and it will to return object with rules.
+Now you can also call rules by name.
+This way can be used up after $(document).ready();
 
 ```js
-var breakpoint = $.mq.getBreakpoint();
-```
+    $(document).ready(function () {
+        $('.element').mq('md', function () {
+            $(this).css('color', 'green').text('md true');
+        }, function () {
+            $(this).css('color', 'red').text('md false');
+        });
 
-And now it works
-
-```js
-    $('.element').mq('breakpoint.md', function () {
-        $(this).css('color', 'green').text('md true');
-    }, function () {
-        $(this).css('color', 'red').text('md false');
-    });
-    
-    $.mq.action(breakpoint.sm, function () {
-        console.log('sm true');
-    }, function () {
-        console.log('sm false');
+        $.mq.action('sm', function () {
+            console.log('sm true');
+        }, function () {
+            console.log('sm false');
+        });
     });
 ```
 

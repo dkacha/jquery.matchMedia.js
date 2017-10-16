@@ -36,4 +36,8 @@ gulp.task('js-polyfill-min', function () {
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('js-all', ['js', 'js-min', 'js-polyfill', 'js-polyfill-min']);
+gulp.task('all', ['js', 'js-min', 'js-polyfill', 'js-polyfill-min']);
+
+gulp.task('watch', function() {
+    gulp.watch(jsMainPath, ['all']);
+});
