@@ -8,7 +8,7 @@ jquery.matchMedia.js has two versions
 2. dist/jquery.matchMedia.polyfill.js - include polyfill (https://github.com/paulirish/matchMedia.js/)
 
 ## options
-* Rule - **string** - media queries rule or <a href="#cssBreakpoints">key</a>. Example: '**(**max-width: 40em**)**' or 'md'.
+* Rule - **string** - media queries rule or <a href="#you-can-share-media-query-rules-with-css">key</a>. Example: '**(**max-width: 40em**)**' or 'md'.
 * HandlerTrue - **function** - function is calling, if rule is true.
 * HandlerFalse - **function** - function is calling, if rule is false.
 
@@ -42,7 +42,6 @@ Example
     });
 ```
 
-<span id="cssBreakpoints"></span>
 ### You can share media query rules with css
 
 In css you must write json width breakpoints to html:before {content '-->>HERE<<--'}:
