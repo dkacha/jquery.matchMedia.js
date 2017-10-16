@@ -8,7 +8,7 @@ jquery.matchMedia.js has two versions
 2. dist/jquery.matchMedia.polyfill.js - include polyfill (https://github.com/paulirish/matchMedia.js/)
 
 ## options
-* Rule - **string** - media queries rule or <a href="#you-can-share-media-query-rules-with-css">key</a>. Example: '**(**max-width: 40em**)**' or 'md'.
+* Rule - **string** - media queries rule or <a href="#you-can-share-media-query-rules-with-css">name</a>. Example: '**(**max-width: 40em**)**' or 'md'.
 * HandlerTrue - **function** - function is calling, if rule is true.
 * HandlerFalse - **function** - function is calling, if rule is false.
 
@@ -44,7 +44,7 @@ Example
 
 ### You can share media query rules with css
 
-In css you must write json width breakpoints to html:before {content '-->>HERE<<--'}:
+In css you need to write json with breakpoints to html:before {content '-->>HERE<<--'}:
 
 ```css
     html:before {
@@ -53,8 +53,9 @@ In css you must write json width breakpoints to html:before {content '-->>HERE<<
     }
 ```
 
-Now you can also call rules by name.
-This way can be used up after $(document).ready();
+Now you can call rules by names (xs, sm, md, lg).
+
+This can be use *after $(document).ready()*.
 
 ```js
     $(document).ready(function () {
@@ -72,4 +73,4 @@ This way can be used up after $(document).ready();
     });
 ```
 
-For inspiration I thank Jan Semilský and <a href="https://github.com/Jahoda">Bohumil Jahoda</a>.
+For inspiration I thank to Jan Semilský and <a href="https://github.com/Jahoda">Bohumil Jahoda</a>.
