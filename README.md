@@ -42,8 +42,8 @@ Example
     });
 ```
 
-
-### <span id="cssBreakpoints">You can share media query rules with css</span>
+<span id="cssBreakpoints"></span>
+### You can share media query rules with css
 
 In css you must write json width breakpoints to html:before {content '-->>HERE<<--'}:
 
