@@ -13,11 +13,8 @@
     "url": "https://github.com/dkacha/jquery.matchMedia.js/issues"
   },
   "homepage": "https://github.com/dkacha/jquery.matchMedia.js#readme",
-  "dependencies": {
-    "jquery": "^1.12.4",
-    "matchmedia-polyfill": "^0.3.0"
-  },
   "devDependencies": {
+    "matchmedia-polyfill": "^0.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-jslint": "^1.0.10",
     "gulp-uglify": "^3.0.0"
