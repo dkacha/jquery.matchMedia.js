@@ -55,7 +55,7 @@ In css you need to write json with breakpoints to html:before {content '-->>HERE
 
 Now you can call rules by names (xs, sm, md, lg).
 
-This can be use *after $(document).ready()*.
+This can be use **after $(document).ready()**.
 
 ```js
     $(document).ready(function () {
@@ -73,6 +73,6 @@ This can be use *after $(document).ready()*.
     });
 ```
 
-Object with breakpoints rules is return *$.mq.getBreakpoints()*
+Object with breakpoints rules is return **$.mq.getBreakpoints()**.
 
 For inspiration I thank to Jan Semilský and <a href="https://github.com/Jahoda">Bohumil Jahoda</a>.
