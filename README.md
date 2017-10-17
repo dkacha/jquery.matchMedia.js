@@ -4,8 +4,8 @@ jQuery adapter for matchMedia (https://developer.mozilla.org/cs/docs/Web/API/Win
 Current browser support: https://caniuse.com/#search=matchMedia
 
 jquery.matchMedia.js has two versions
-1. dist/jquery.matchMedia.js <a href="demo/demo.html"><b>DEMO HERE</b></a>
-2. dist/jquery.matchMedia.polyfill.js - include polyfill (https://github.com/paulirish/matchMedia.js/) <a href="demo/demo-and-polyfill.html"><b>DEMO HERE</b></a>
+1. dist/jquery.matchMedia.js <a href="https://dkacha.github.io/jquery.matchMedia.js/demo/demo.html"><b>DEMO HERE</b></a>
+2. dist/jquery.matchMedia.polyfill.js - include polyfill (https://github.com/paulirish/matchMedia.js/) <a href="https://dkacha.github.io/jquery.matchMedia.js/demo/demo-and-polyfill.html"><b>DEMO HERE</b></a>
 
 ## options
 * Rule - **string** - media queries rule or <a href="#you-can-share-media-query-rules-with-css">name</a>. Example: '**(**max-width: 40em**)**' or 'md'.
