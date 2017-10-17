@@ -73,4 +73,6 @@ This can be use *after $(document).ready()*.
     });
 ```
 
+Object with breakpoints rules is return *$.mq.getBreakpoints()*
+
 For inspiration I thank to Jan Semilský and <a href="https://github.com/Jahoda">Bohumil Jahoda</a>.
