@@ -11,6 +11,7 @@ jquery.matchMedia.js has two versions
 * Rule - **string** - media queries rule or <a href="#you-can-share-media-query-rules-with-css">name</a>. Example: '**(**max-width: 40em**)**' or 'md'.
 * HandlerTrue - **function** - function is calling, if rule is true.
 * HandlerFalse - **function** - function is calling, if rule is false.
+* Listener - **booleans** - default is true - addListener on resize
 
 You can call function in two ways
 

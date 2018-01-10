@@ -12,7 +12,7 @@
     };
 
     $.mq = {
-        action: function (rule, handlerTrue, handlerFalse, elThis) {
+        action: function (rule, handlerTrue, handlerFalse, listener, elThis) {
             if (typeof handlerTrue == 'function' || typeof handlerFalse == 'function') {
                 var mq = window.matchMedia(getBreakpoint(rule));
 
@@ -34,7 +34,8 @@
                     }
                 };
 
-                mq.addListener(callTrigger);
+                if (listener !== false) mq.addListener(callTrigger);
+
                 callTrigger();
             }
         },
@@ -43,9 +44,9 @@
         }
     };
 
-    $.fn.mq = function (rule, handlerTrue, handlerFalse) {
+    $.fn.mq = function (rule, handlerTrue, handlerFalse, listener) {
         return this.each(function () {
-            $.mq.action(rule, handlerTrue, handlerFalse, this);
+            $.mq.action(rule, handlerTrue, handlerFalse, listener, this);
         });
     }
 

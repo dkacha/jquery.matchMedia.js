@@ -135,7 +135,7 @@ window.matchMedia || (window.matchMedia = function() {
     };
 
     $.mq = {
-        action: function (rule, handlerTrue, handlerFalse, elThis) {
+        action: function (rule, handlerTrue, handlerFalse, listener, elThis) {
             if (typeof handlerTrue == 'function' || typeof handlerFalse == 'function') {
                 var mq = window.matchMedia(getBreakpoint(rule));
 
@@ -157,7 +157,8 @@ window.matchMedia || (window.matchMedia = function() {
                     }
                 };
 
-                mq.addListener(callTrigger);
+                if (listener !== false) mq.addListener(callTrigger);
+
                 callTrigger();
             }
         },
@@ -166,9 +167,9 @@ window.matchMedia || (window.matchMedia = function() {
         }
     };
 
-    $.fn.mq = function (rule, handlerTrue, handlerFalse) {
+    $.fn.mq = function (rule, handlerTrue, handlerFalse, listener) {
         return this.each(function () {
-            $.mq.action(rule, handlerTrue, handlerFalse, this);
+            $.mq.action(rule, handlerTrue, handlerFalse, listener, this);
         });
     }
 

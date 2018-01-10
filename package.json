@@ -1,6 +1,6 @@
 {
   "name": "jquery-matchmedia",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "jQuery api for matchMedia",
   "main": "./dist/jquery.matchMedia.js",
   "repository": {
